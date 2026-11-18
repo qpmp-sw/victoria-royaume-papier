@@ -1,0 +1,164 @@
+{
+  "forward": "-Y",
+  "units": "meters",
+  "fps": 24,
+  "clips": {
+    "walk": {
+      "cycle_frames": 20,
+      "cycle_s": 0.8333,
+      "distance_m": 0.25,
+      "speed_mps": 0.3,
+      "duty": 0.6,
+      "qa": {
+        "0.8": {
+          "FL": 0.0041,
+          "FR": 0.0034,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.0": {
+          "FL": 0.0041,
+          "FR": 0.0034,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.3": {
+          "FL": 0.0041,
+          "FR": 0.0034,
+          "BL": 0.0,
+          "BR": 0.0
+        }
+      },
+      "max_plant_drift_m": 0.0041,
+      "pass_1cm": true
+    },
+    "walk_slow": {
+      "cycle_frames": 28,
+      "cycle_s": 1.1667,
+      "distance_m": 0.22,
+      "speed_mps": 0.1886,
+      "duty": 0.64,
+      "qa": {
+        "0.8": {
+          "FL": 0.0029,
+          "FR": 0.0035,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.0": {
+          "FL": 0.0029,
+          "FR": 0.0035,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.3": {
+          "FL": 0.0029,
+          "FR": 0.0035,
+          "BL": 0.0,
+          "BR": 0.0
+        }
+      },
+      "max_plant_drift_m": 0.0035,
+      "pass_1cm": true
+    },
+    "trot": {
+      "cycle_frames": 10,
+      "cycle_s": 0.4167,
+      "distance_m": 0.36,
+      "speed_mps": 0.864,
+      "duty": 0.34,
+      "qa": {
+        "0.8": {
+          "FL": 0.0061,
+          "FR": 0.0061,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.0": {
+          "FL": 0.0061,
+          "FR": 0.0061,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.3": {
+          "FL": 0.0061,
+          "FR": 0.0061,
+          "BL": 0.0,
+          "BR": 0.0
+        }
+      },
+      "max_plant_drift_m": 0.0061,
+      "pass_1cm": true
+    },
+    "run": {
+      "cycle_frames": 8,
+      "cycle_s": 0.3333,
+      "distance_m": 0.5,
+      "speed_mps": 1.5,
+      "duty": 0.26,
+      "qa": {
+        "0.8": {
+          "FL": 0.0,
+          "FR": 0.0079,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.0": {
+          "FL": 0.0,
+          "FR": 0.0079,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.3": {
+          "FL": 0.0,
+          "FR": 0.0079,
+          "BL": 0.0,
+          "BR": 0.0
+        }
+      },
+      "max_plant_drift_m": 0.0079,
+      "pass_1cm": true
+    },
+    "run_away": {
+      "cycle_frames": 8,
+      "cycle_s": 0.3333,
+      "distance_m": 0.54,
+      "speed_mps": 1.62,
+      "duty": 0.26,
+      "qa": {
+        "0.8": {
+          "FL": 0.0,
+          "FR": 0.0083,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.0": {
+          "FL": 0.0,
+          "FR": 0.0083,
+          "BL": 0.0,
+          "BR": 0.0
+        },
+        "1.3": {
+          "FL": 0.0,
+          "FR": 0.0083,
+          "BL": 0.0,
+          "BR": 0.0
+        }
+      },
+      "max_plant_drift_m": 0.0083,
+      "pass_1cm": true
+    }
+  },
+  "follow": {
+    "match_victoria": true,
+    "victoria_walk_mps": 2.3,
+    "victoria_run_mps": 4.6,
+    "suggested_timeScale": {
+      "when_she_walks": "play trot at timeScale = v / 0.86",
+      "when_she_runs": "play run at timeScale = v / 1.50",
+      "slow_or_home_crossing": "play walk or walk_slow at timeScale = v / stride_mps"
+    },
+    "blend": "cross-fade walk/trot/run by speed; keep root_speed == Victoria speed while following",
+    "playback": "clip.timeScale = root_speed / clip.speed_mps (clamped ~0.7-1.5 for a natural look; pick the gait whose speed_mps is closest)"
+  }
+}

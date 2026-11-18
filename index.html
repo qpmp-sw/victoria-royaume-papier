@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Victoria et le Royaume de Papier</title>
+
+  <script type="module" crossorigin src="./assets/index-KpoJqRMU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CTy1pSxV.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="onos"></div>
+<div id="hud">
+  <div id="obj"></div>
+  <div id="tray"></div>
+  <div id="hud-snd"><button id="sfx" title="Bruitages et voix">🔊</button><button id="music" title="Musique">♪</button></div>
+</div>
+<div id="prompt"></div>
+<div id="hint">ZQSD bouger · Souris regarder · Espace sauter · F action · P pause · M menu</div>
+<div id="toast"></div>
+<div id="pause-card"><div class="pause-paper"><span class="pz">⏸</span><b>Pause</b><em>P pour reprendre</em><small>Quintus fait une petite sieste… 🐱💤</small><button id="pause-menu">📖 M : retour au livre</button></div></div>
+<div id="dialog"><div id="dlg-card"><div id="dlg-pic"><img id="dlg-img" alt="" /></div><div id="dlg-body"><div id="dlg-name"></div><div id="dlg-text"></div></div><div id="dlg-next">F ▸</div></div></div>
+<div id="title-card"><div class="tc-paper"><small id="tc-num"></small><b id="tc-name"></b></div></div>
+<div id="pagewrap"><div id="page"></div></div>
+<div id="start">
+  <div class="desk-deco"><i class="c1"></i><i class="c2"></i><i class="c3"></i></div>
+  <div class="book" id="book">
+    <div class="page-l"></div><div class="page-r"></div><div class="spine"></div>
+    <div class="cover" id="cover"><div class="cover-front"><div class="cv-title">Victoria<small>et le Royaume de Papier</small></div><div class="cv-vic-wrap" id="cv-vic-wrap"><img src="./chars3d/vic_red.webp" class="cv-vic" alt="" id="cv-vic"/></div><div class="cv-tap" id="cv-tap">👆</div><div id="loading">Chargement…</div></div><div class="cover-back"></div></div>
+    <div class="spread" id="spread">
+      <h1 class="pop-title" id="pop-title"></h1>
+      <div class="mstep" id="m-dress">
+        <button class="sw" data-d="red" aria-label="Robe rouge"><span><img src="./chars3d/vic_red.webp" alt=""/></span></button>
+        <div class="big-vic-wrap"><img id="big-vic" src="./chars3d/vic_red.webp" alt="Victoria"/><div class="vic-shadow"></div></div>
+        <button class="sw" data-d="white" aria-label="Robe blanche"><span><img src="./chars3d/vic_white.webp" alt=""/></span></button>
+        <button class="sw" data-d="purple" aria-label="Robe violette à étoiles"><span><img src="./chars3d/vic_purple.webp" alt=""/></span></button>
+        <button class="go" id="m-go" aria-label="C'est parti">▶</button>
+      </div>
+      <div class="mstep" id="m-map">
+        <div class="map" id="map">
+          <svg viewBox="0 0 1000 560" preserveAspectRatio="none" class="map-bg"><defs><filter id="rough"><feTurbulence baseFrequency="0.02" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="12"/></filter></defs>
+            <path filter="url(#rough)" d="M0 0 H1000 V120 C860 175 760 95 640 140 C520 185 420 110 300 150 C200 182 90 130 0 160Z" fill="#8fc7dd"/>
+            <path filter="url(#rough)" d="M0 0 H1000 V100 C860 150 760 80 640 120 C520 160 420 92 300 130 C200 160 90 112 0 140Z" fill="#a9d6e6"/>
+            <path d="M190 230 C300 300 380 210 470 300 S650 400 760 330 S880 420 830 470" fill="none" stroke="#c99b6b" stroke-width="7" stroke-dasharray="4 16" stroke-linecap="round"/>
+            <g fill="#a3cd7f" opacity=".7"><ellipse cx="90" cy="470" rx="80" ry="40"/><ellipse cx="560" cy="510" rx="120" ry="38"/><ellipse cx="940" cy="250" rx="70" ry="44"/></g>
+            <g transform="translate(930 480)" fill="#c4462f" font-family="Nunito" font-weight="900" font-size="26"><circle r="34" fill="#fffaf0" stroke="#c99b6b" stroke-width="3"/><path d="M0 -28 L7 0 L0 28 L-7 0Z"/><text y="-38" text-anchor="middle" font-size="18">N</text></g>
+          </svg>
+          <div class="patch spring" style="left:15%;top:27%"></div><div class="patch summer" style="left:40%;top:45%"></div><div class="patch autumn" style="left:64%;top:57%"></div><div class="patch winter" style="left:84%;top:37%"></div>
+          <button class="place" data-l="0" style="left:15%;top:26%"><div class="lm"><i class="spr" data-s="blossom_tree_1" data-h="86"></i><i class="spr" data-s="stone_tower_0" data-h="120"></i><img src="./chars/mamie.webp" class="lm-ch" alt=""/></div><b><span class="se">🌸</span>Morges</b></button>
+          <button class="place" data-l="1" style="left:40%;top:44%"><div class="lm"><i class="spr" data-s="tent_0" data-h="96"></i><img src="./chars/licorne.webp" class="lm-ch" alt=""/></div><b><span class="se">☀️</span>Europa-Park</b></button>
+          <button class="place" data-l="2" style="left:64%;top:56%"><div class="lm"><i class="spr" data-s="trees_a_2" data-h="96"></i><i class="spr" data-s="pumpkin_cart_0" data-h="76"></i><i class="spr" data-s="market_stall_0" data-h="88"></i></div><b><span class="se">🍂</span>Automnales</b></button>
+          <button class="place" data-l="3" style="left:84%;top:36%"><div class="lm"><i class="spr" data-s="snowpine_0" data-h="100"></i><i class="spr" data-s="greenhouse_0" data-h="100"></i><i class="spr" data-s="snowman_0" data-h="60"></i></div><b><span class="se">❄️</span>Crèche</b></button>
+        </div>
+        <button class="album-btn" id="m-album" aria-label="Album d'autocollants">📒<small id="album-n"></small></button>
+        <button class="back-dress" id="m-back" aria-label="Changer de robe"><img id="back-vic" src="./chars3d/head_red.webp" alt=""/>👗</button>
+      </div>
+    </div>
+  </div>
+  <div id="album"><div class="album-page"><h2>📒 Mon album d'autocollants</h2><div id="album-grid"></div><button id="album-close">✔</button></div></div>
+  <div class="menu-ctrl"><button id="m-voice" title="Bruitages et voix">🔊</button><button id="m-music" title="Musique">🎵</button></div>
+  <img src="./chars/quintus.webp" id="m-cat" alt="Quintus"/>
+  <div class="credits">Décors en papier imprimé : Papertrails par Shikhar (licence MIT)</div>
+</div>
+<div id="lvl-done"><div class="done-paper"><b>Bravo Victoria !</b><em id="done-name"></em><div id="done-sticker" class="stk fresh"></div><div id="done-items"></div><button id="done-back" aria-label="Retour à la carte">📒 ▶</button></div></div>
+<div id="cutscene">
+  <div class="cs-space"><div class="cs-stars"></div></div>
+  <div class="cs-cabin">
+    <div class="cs-porthole"><div class="cs-planet"><div class="cs-rose"></div></div></div>
+    <img class="cs-papa" src="./chars/head_papa.webp" alt="" />
+    <div class="cs-bench"></div>
+    <div class="cs-seat s1"></div><div class="cs-seat s2"></div>
+    <img class="cs-vic" id="cs-vic" src="./chars/head_victoria_red.webp" alt="" />
+    <img class="cs-prince" src="./chars/head_prin.webp" alt="" />
+    <div class="cs-crown">👑</div><div class="cs-flowers">🌸🌼🌸</div>
+    <div class="cs-dash"><i></i><i></i><i></i><b></b><i></i><i></i></div>
+    <div class="cs-hearts"></div>
+    <div class="cs-glass"></div>
+  </div>
+  <div class="cs-frame"></div>
+  <div class="cs-hmm">Hmm hmm…</div>
+  <div class="cs-names">Victoria ♥ Prin</div>
+  <div class="cs-fin"><div class="fin-paper"><b>Bravo Victoria !</b><em>Victoria &amp; Prin, pour toujours ♥</em><span>FIN</span><button id="replay" aria-label="Retour au livre">📒 ▶</button></div></div>
+  <div class="cs-confetti"></div>
+</div>
+</body>
+</html>
